@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="calcu.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="calculator">
+      <form name="form1">
+        <input type="text" name="textview" readonly />
+      </form>
+      <section class="buttons">
+        <button type="button" class="btn-clear" onclick="clearScreen()">
+          C
+        </button>
+        <button type="button" class="btn-func" onclick="backspace()">⌫</button>
+        <button type="button" class="btn-op" onclick="insert('/')">/</button>
+        <button type="button" class="btn-op" onclick="insert('*')">×</button>
+
+        <button type="button" onclick="insert('7')">7</button>
+        <button type="button" onclick="insert('8')">8</button>
+        <button type="button" onclick="insert('9')">9</button>
+        <button type="button" class="btn-op" onclick="insert('-')">-</button>
+
+        <button type="button" onclick="insert('4')">4</button>
+        <button type="button" onclick="insert('5')">5</button>
+        <button type="button" onclick="insert('6')">6</button>
+        <button type="button" class="btn-op" onclick="insert('+')">+</button>
+
+        <button type="button" onclick="insert('1')">1</button>
+        <button type="button" onclick="insert('2')">2</button>
+        <button type="button" onclick="insert('3')">3</button>
+        <button type="button" class="btn-equal" onclick="equal()">=</button>
+
+        <button type="button" class="btn-zero" onclick="insert('0')">0</button>
+        <button type="button" onclick="insert('.')">.</button>
+      </section>
+    </div>
+
+    <script src="calcu.js"></script>
+  </body>
+</html>
