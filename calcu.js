@@ -38,7 +38,7 @@ function checkEasterEgg() {
   const calculator = document.querySelector(".calculator");
   const screen = document.form1.textview;
 
-  if (screen.value === "5318008") {
+  if (screen.value === "58008") {
     calculator.classList.add("upside-down");
   } else {
     calculator.classList.remove("upside-down");
@@ -72,7 +72,7 @@ function loadTheme() {
 
 // project is sent via link so theres no way para ma discover ang easter egg, so its set by defaut -Dw
 document.addEventListener("DOMContentLoaded", () => {
-  document.form1.textview.value = "5318008";
+  document.form1.textview.value = "58008";
   checkEasterEgg();
   loadTheme();
 });
