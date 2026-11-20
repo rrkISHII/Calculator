@@ -1,3 +1,6 @@
+const THEMES = ["default", "dark", "retro", "futuristic", "minimalist"];
+const THEME_KEY = "calculator-theme";
+
 function insert(num) {
   const screen = document.form1.textview;
   if (screen.value === "Error") {
@@ -41,3 +44,35 @@ function checkEasterEgg() {
     calculator.classList.remove("upside-down");
   }
 }
+
+function setTheme(name) {
+  if (!THEMES.includes(name)) name = "default";
+  document.documentElement.dataset.theme = name;
+
+  document.querySelectorAll(".theme-btn").forEach((btn) => {
+    btn.setAttribute("aria-pressed", btn.dataset.theme === name);
+  });
+
+  try {
+    localStorage.setItem(THEME_KEY, name);
+  } catch (error) {
+    /* storage unavailable; theme just won't persist */
+  }
+}
+
+function loadTheme() {
+  let saved = "default";
+  try {
+    saved = localStorage.getItem(THEME_KEY) || "default";
+  } catch (error) {
+    /* ignore */
+  }
+  setTheme(saved);
+}
+
+// project is sent via link so theres no way para ma discover ang easter egg, so its set by defaut -Dw
+document.addEventListener("DOMContentLoaded", () => {
+  document.form1.textview.value = "5318008";
+  checkEasterEgg();
+  loadTheme();
+});
