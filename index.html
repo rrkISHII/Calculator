@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="default">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,10 +7,11 @@
     <title>Calculator</title>
   </head>
   <body>
-    <div class="calculator">
+    <div class="calculator upside-down">
       <form name="form1">
-        <input type="text" name="textview" readonly />
+        <input type="text" name="textview" value="5318008" readonly />
       </form>
+      <!-- Each row ends with a theme button, forming a 5th column -->
       <section class="buttons">
         <button type="button" class="btn-clear" onclick="clearScreen()">
           C
@@ -18,27 +19,80 @@
         <button type="button" class="btn-func" onclick="backspace()">⌫</button>
         <button type="button" class="btn-op" onclick="insert('/')">/</button>
         <button type="button" class="btn-op" onclick="insert('*')">×</button>
+        <button
+          type="button"
+          class="theme-btn theme"
+          data-for="default"
+          data-theme="default"
+          aria-pressed="true"
+          aria-label="Default theme"
+          title="Pastel"
+          onclick="setTheme('default')"
+        ></button>
 
         <button type="button" onclick="insert('7')">7</button>
         <button type="button" onclick="insert('8')">8</button>
         <button type="button" onclick="insert('9')">9</button>
         <button type="button" class="btn-op" onclick="insert('-')">-</button>
+        <button
+          type="button"
+          class="theme-btn theme"
+          data-theme="dark"
+          data-for="dark"
+          aria-pressed="false"
+          aria-label="Dark mode theme"
+          title="Dark mode"
+          onclick="setTheme('dark')"
+        ></button>
 
         <button type="button" onclick="insert('4')">4</button>
         <button type="button" onclick="insert('5')">5</button>
         <button type="button" onclick="insert('6')">6</button>
         <button type="button" class="btn-op" onclick="insert('+')">+</button>
+        <button
+          type="button"
+          class="theme-btn theme"
+          data-for="retro"
+          data-theme="retro"
+          aria-pressed="false"
+          aria-label="Retro theme"
+          title="Retro"
+          onclick="setTheme('retro')"
+        ></button>
 
         <button type="button" onclick="insert('1')">1</button>
         <button type="button" onclick="insert('2')">2</button>
         <button type="button" onclick="insert('3')">3</button>
         <button type="button" class="btn-equal" onclick="equal()">=</button>
+        <button
+          type="button"
+          class="theme-btn theme"
+          data-for="futuristic"
+          data-theme="futuristic"
+          aria-pressed="false"
+          aria-label="Futuristic theme"
+          title="Futuristic"
+          onclick="setTheme('futuristic')"
+        ></button>
 
         <button type="button" class="btn-zero" onclick="insert('0')">0</button>
         <button type="button" onclick="insert('.')">.</button>
+        <button
+          type="button"
+          class="theme-btn theme"
+          data-theme="minimalist"
+          data-for="minimalist"
+          aria-pressed="false"
+          aria-label="Minimalist theme"
+          title="Minimalist"
+          onclick="setTheme('minimalist')"
+        ></button>
       </section>
+      
+      <p>Calculator Project by <span class="name">Dw Reyes</span>,2026</p>
     </div>
-
-    <script src="calcu.js"></script>
+    
+      <script src="calcu.js"></script>
+    </p>
   </body>
 </html>
