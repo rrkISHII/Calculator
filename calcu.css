@@ -1,10 +1,191 @@
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap");
+/* inimport na font mula sa google */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Orbitron:wght@600;800&family=Plus+Jakarta+Sans:wght@700;800&family=Press+Start+2P&display=swap");
 
+/* ---------- Theme options ---------- */
+/* Default theme lives on :root; other themes override the same options. */
+:root {
+  --font: "Orbitron", sans-serif;
+  --bg: #fceade;
+  --bg-image: radial-gradient(#e5cdbd 1.5px, transparent 1.5px);
+  --bg-size: 20px 20px;
+
+  --panel: #ffffff;
+  --border: #2d3748;
+  --border-w: 3px;
+  --frame-w: 5px;
+  --radius-frame: 30px;
+  --radius: 14px;
+  --shadow: 8px 8px 0 #2d3748;
+  --shadow-hover: 10px 10px 0 #2d3748;
+
+  --text: #2d3748;
+  --name: #c2410c;
+  --screen-bg: #f7f9fc;
+  --screen-text: #2d3748;
+
+  --btn: #ffffff;
+  --btn-hover: #f1f5f9;
+  --btn-active: #cbd5e1;
+  --op: #bbf7d0;
+  --op-hover: #86efac;
+  --op-text: #2d3748;
+  --clear: #fecaca;
+  --clear-hover: #fca5a5;
+  --clear-text: #2d3748;
+  --func: #fed7aa;
+  --func-hover: #fdba74;
+  --func-text: #2d3748;
+  --equal: #bae6fd;
+  --equal-hover: #7dd3fc;
+  --equal-text: #2d3748;
+
+  --focus: #2d3748;
+  --btn-glow: none;
+}
+
+:root[data-theme="dark"] {
+  --bg: #12141b;
+  --bg-image: radial-gradient(#242938 1.5px, transparent 1.5px);
+  --panel: #1c202b;
+  --border: #475069;
+  --shadow: 8px 8px 0 #05060a;
+  --shadow-hover: 10px 10px 0 #05060a;
+  --text: #e4e8f4;
+  --name: #9ef0c4;
+  --screen-bg: #12141b;
+  --screen-text: #f1f4fb;
+  --btn: #262b3a;
+  --btn-hover: #31374a;
+  --btn-active: #3d455c;
+  --op: #1f4a39;
+  --op-hover: #28604a;
+  --op-text: #9ef0c4;
+  --clear: #5a2730;
+  --clear-hover: #72323d;
+  --clear-text: #ffb3bd;
+  --func: #5a3d1c;
+  --func-hover: #72502a;
+  --func-text: #ffd29a;
+  --equal: #24456b;
+  --equal-hover: #2e5886;
+  --equal-text: #b5dcff;
+  --focus: #b5dcff;
+}
+
+:root[data-theme="retro"] {
+  --font: "Press Start 2P", monospace;
+  --bg: #1b1034;
+  --bg-image: radial-gradient(#3a2566 1.5px, transparent 1.5px);
+  --panel: #43307a;
+  --border: #0d0620;
+  --border-w: 4px;
+  --frame-w: 6px;
+  --radius-frame: 0;
+  --radius: 0;
+  --shadow: 10px 10px 0 #ff5d8f;
+  --shadow-hover: 12px 12px 0 #ff5d8f;
+  --text: #fff3b0;
+  --name: #ff8fb3;
+  --screen-bg: #0b1a0b;
+  --screen-text: #7dff6a;
+  --btn: #6a55b0;
+  --btn-hover: #7d68c4;
+  --btn-active: #5a4799;
+  --op: #ff5d8f;
+  --op-hover: #ff7da6;
+  --op-text: #1b1034;
+  --clear: #ff8c42;
+  --clear-hover: #ffa56a;
+  --clear-text: #1b1034;
+  --func: #3fd0c9;
+  --func-hover: #66e0da;
+  --func-text: #1b1034;
+  --equal: #ffe66d;
+  --equal-hover: #fff09a;
+  --equal-text: #1b1034;
+  --focus: #ffe66d;
+}
+
+:root[data-theme="futuristic"] {
+  --font: "Orbitron", sans-serif;
+  --bg: #04070f;
+  --bg-image: radial-gradient(
+    rgba(34, 211, 238, 0.22) 1.5px,
+    transparent 1.5px
+  );
+  --panel: #0a1020;
+  --border: #22d3ee;
+  --border-w: 2px;
+  --frame-w: 2px;
+  --radius-frame: 22px;
+  --radius: 10px;
+  --shadow:
+    0 0 28px rgba(34, 211, 238, 0.35), inset 0 0 18px rgba(34, 211, 238, 0.12);
+  --shadow-hover:
+    0 0 38px rgba(34, 211, 238, 0.55), inset 0 0 22px rgba(34, 211, 238, 0.18);
+  --text: #bff6ff;
+  --name: #ff6bd6;
+  --screen-bg: #02050b;
+  --screen-text: #5cf2ff;
+  --btn: #0f1a33;
+  --btn-hover: #162650;
+  --btn-active: #1d3366;
+  --op: #0c2b3a;
+  --op-hover: #123f55;
+  --op-text: #5cf2ff;
+  --clear: #3a1030;
+  --clear-hover: #55164a;
+  --clear-text: #ff6bd6;
+  --func: #2d2410;
+  --func-hover: #45371a;
+  --func-text: #ffd166;
+  --equal: #0e4f63;
+  --equal-hover: #14718f;
+  --equal-text: #e6fcff;
+  --focus: #ff6bd6;
+  --btn-glow: 0 0 10px rgba(34, 211, 238, 0.25);
+}
+
+:root[data-theme="minimalist"] {
+  --font: "Inter", sans-serif;
+  --bg: #f4f4f2;
+  --bg-image: radial-gradient(#bbbbba 1.5px, transparent 1.5px);
+  --panel: #ffffff;
+  --border: #e3e3e0;
+  --border-w: 1px;
+  --frame-w: 1px;
+  --radius-frame: 24px;
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 14px 36px rgba(0, 0, 0, 0.09);
+  --text: #1c1c1c;
+  --name: #b3261e;
+  --screen-bg: #ffffff;
+  --screen-text: #1c1c1c;
+  --btn: #f6f6f4;
+  --btn-hover: #ececea;
+  --btn-active: #dededb;
+  --op: #ececea;
+  --op-hover: #e0e0dd;
+  --op-text: #1c1c1c;
+  --clear: #f6f6f4;
+  --clear-hover: #ececea;
+  --clear-text: #b3261e;
+  --func: #f6f6f4;
+  --func-hover: #ececea;
+  --func-text: #1c1c1c;
+  --equal: #1c1c1c;
+  --equal-hover: #3a3a3a;
+  --equal-text: #ffffff;
+  --focus: #1c1c1c;
+}
+
+/* base */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font);
 }
 
 body {
@@ -12,28 +193,34 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #fceade;
-  background-image: radial-gradient(#e5cdbd 1.5px, transparent 1.5px);
-  background-size: 20px 20px;
+  padding: 24px;
+  color: var(--text);
+  background-color: var(--bg);
+  background-image: var(--bg-image);
+  background-size: var(--bg-size);
+  transition: background-color 0.3s ease;
 }
 
+/* calcu */
 .calculator {
-  background-color: #ffffff;
+  background-color: var(--panel);
   padding: 24px;
-  border-radius: 30px;
-  border: 5px solid #2d3748;
-  box-shadow: 8px 8px 0px #2d3748;
-  width: 340px;
-  /* Smooth rotation transition */
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: var(--radius-frame);
+  border: var(--frame-w) solid var(--border);
+  box-shadow: var(--shadow);
+  width: min(400px, calc(100vw - 48px));
+  transition:
+    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .calculator:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 10px 10px 0px #2d3748;
+  box-shadow: var(--shadow-hover);
 }
 
-/* Flips the calculator 180 degrees when 5318008 is entered */
+/* hehe easter egg*/
 .calculator.upside-down {
   transform: rotate(180deg);
 }
@@ -41,11 +228,11 @@ body {
 form input[name="textview"] {
   width: 100%;
   height: 68px;
-  background-color: #f7f9fc;
-  border: 3px solid #2d3748;
-  border-radius: 14px;
-  color: #2d3748;
-  font-size: 2rem;
+  background-color: var(--screen-bg);
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius);
+  color: var(--screen-text);
+  font-size: 3rem;
   font-weight: 800;
   text-align: right;
   padding: 0 16px;
@@ -53,64 +240,142 @@ form input[name="textview"] {
   outline: none;
 }
 
+:root[data-theme="retro"] form input[name="textview"] {
+  font-size: 1.2rem;
+}
+:root[data-theme="futuristic"] form input[name="textview"] {
+  font-size: 1.6rem;
+  text-shadow: 0 0 8px rgba(92, 242, 255, 0.6);
+}
+:root[data-theme="minimalist"] form input[name="textview"] {
+  font-weight: 600;
+}
+
 .buttons {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 10px;
 }
 
 button {
   height: 56px;
-  border: 3px solid #2d3748;
-  border-radius: 14px;
-  font-size: 1.2rem;
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1.3rem;
   font-weight: 800;
-  color: #2d3748;
-  background-color: #ffffff;
+  color: var(--text);
+  background-color: var(--btn);
+  box-shadow: var(--btn-glow);
   cursor: pointer;
   transition:
     background-color 0.15s ease,
     opacity 0.15s ease;
 }
 
+:root[data-theme="retro"] button {
+  font-size: 0.9rem;
+}
+:root[data-theme="minimalist"] button {
+  font-weight: 600;
+}
+
 button:hover {
-  background-color: #f1f5f9;
+  background-color: var(--btn-hover);
 }
 
 button:active {
-  background-color: #cbd5e1;
+  background-color: var(--btn-active);
+}
+
+button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
 }
 
 .btn-op {
-  background-color: #bbf7d0;
+  background-color: var(--op);
+  color: var(--op-text);
 }
 .btn-op:hover {
-  background-color: #86efac;
+  background-color: var(--op-hover);
 }
 
 .btn-clear {
-  background-color: #fecaca;
+  background-color: var(--clear);
+  color: var(--clear-text);
 }
 .btn-clear:hover {
-  background-color: #fca5a5;
+  background-color: var(--clear-hover);
 }
 
 .btn-func {
-  background-color: #fed7aa;
+  background-color: var(--func);
+  color: var(--func-text);
 }
 .btn-func:hover {
-  background-color: #fdba74;
+  background-color: var(--func-hover);
 }
 
 .btn-equal {
   grid-row: span 2;
   height: auto;
-  background-color: #bae6fd;
+  background-color: var(--equal);
+  color: var(--equal-text);
 }
 .btn-equal:hover {
-  background-color: #7dd3fc;
+  background-color: var(--equal-hover);
 }
 
 .btn-zero {
   grid-column: span 2;
+}
+
+.theme-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.theme-btn .theme {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+}
+
+:root[data-theme="retro"] .theme-btn .theme {
+  border-radius: 0;
+}
+
+.theme-btn[aria-pressed="true"] {
+  background-color: var(--equal);
+  color: var(--equal-text);
+}
+
+.theme[data-for="default"] {
+  background: linear-gradient(135deg, #bbf7d0 50%, #fed7aa 50%);
+}
+.theme[data-for="dark"] {
+  background: linear-gradient(135deg, #12141b 50%, #475069 50%);
+}
+.theme[data-for="retro"] {
+  background: linear-gradient(135deg, #ff5d8f 50%, #ffe66d 50%);
+}
+.theme[data-for="futuristic"] {
+  background: linear-gradient(135deg, #04070f 50%, #22d3ee 50%);
+}
+.theme[data-for="minimalist"] {
+  background: linear-gradient(135deg, #ffffff 50%, #1c1c1c 50%);
+}
+.name {
+  color: var(--name);
+  font-weight: 800;
+}
+@media (prefers-reduced-motion: reduce) {
+  .calculator,
+  body,
+  button {
+    transition: none;
+  }
 }
