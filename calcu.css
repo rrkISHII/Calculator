@@ -204,11 +204,11 @@ body {
 /* calcu */
 .calculator {
   background-color: var(--panel);
-  padding: 24px;
+  padding: 18px;
   border-radius: var(--radius-frame);
   border: var(--frame-w) solid var(--border);
   box-shadow: var(--shadow);
-  width: min(400px, calc(100vw - 48px));
+  width: min(335px, calc(82vw - 36px));
   transition:
     transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
     background-color 0.3s ease,
@@ -227,24 +227,24 @@ body {
 
 form input[name="textview"] {
   width: 100%;
-  height: 68px;
+  height: 56px;
   background-color: var(--screen-bg);
   border: var(--border-w) solid var(--border);
   border-radius: var(--radius);
   color: var(--screen-text);
-  font-size: 3rem;
+  font-size: 2.4rem;
   font-weight: 800;
   text-align: right;
-  padding: 0 16px;
-  margin-bottom: 18px;
+  padding: 0 12px;
+  margin-bottom: 14px;
   outline: none;
 }
 
 :root[data-theme="retro"] form input[name="textview"] {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 :root[data-theme="futuristic"] form input[name="textview"] {
-  font-size: 1.6rem;
+  font-size: 1.35rem;
   text-shadow: 0 0 8px rgba(92, 242, 255, 0.6);
 }
 :root[data-theme="minimalist"] form input[name="textview"] {
@@ -254,14 +254,14 @@ form input[name="textview"] {
 .buttons {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
+  gap: 8px;
 }
 
 button {
-  height: 56px;
+  height: 46px;
   border: var(--border-w) solid var(--border);
   border-radius: var(--radius);
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 800;
   color: var(--text);
   background-color: var(--btn);
@@ -273,7 +273,7 @@ button {
 }
 
 :root[data-theme="retro"] button {
-  font-size: 0.9rem;
+  font-size: 0.78rem;
 }
 :root[data-theme="minimalist"] button {
   font-weight: 600;
@@ -338,8 +338,8 @@ button:focus-visible {
 }
 
 .theme-btn .theme {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: 2px solid currentColor;
 }
@@ -368,10 +368,12 @@ button:focus-visible {
 .theme[data-for="minimalist"] {
   background: linear-gradient(135deg, #ffffff 50%, #1c1c1c 50%);
 }
+
 .name {
   color: var(--name);
   font-weight: 800;
 }
+
 @media (prefers-reduced-motion: reduce) {
   .calculator,
   body,
