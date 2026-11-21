@@ -180,7 +180,7 @@
   --focus: #1c1c1c;
 }
 
-/* base */
+/* ---------- base ---------- */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -193,31 +193,41 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 24px;
+  min-height: 100dvh; /* accounts for mobile browser toolbars */
+  padding: 12px;
+  padding-top: max(12px, env(safe-area-inset-top));
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+  padding-left: max(12px, env(safe-area-inset-left));
+  padding-right: max(12px, env(safe-area-inset-right));
   color: var(--text);
   background-color: var(--bg);
   background-image: var(--bg-image);
   background-size: var(--bg-size);
   transition: background-color 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* calcu */
+/* ---------- calcu ---------- */
 .calculator {
   background-color: var(--panel);
-  padding: 18px;
+  padding: clamp(12px, 4vw, 18px);
   border-radius: var(--radius-frame);
   border: var(--frame-w) solid var(--border);
   box-shadow: var(--shadow);
-  width: min(335px, calc(82vw - 36px));
+  width: 100%;
+  max-width: 380px;
   transition:
     transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
     background-color 0.3s ease,
     box-shadow 0.3s ease;
 }
 
-.calculator:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-hover);
+/* hover sticks on touch screens, so only use it on devices with a real pointer */
+@media (hover: hover) {
+  .calculator:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-hover);
+  }
 }
 
 /* hehe easter egg*/
@@ -227,24 +237,24 @@ body {
 
 form input[name="textview"] {
   width: 100%;
-  height: 56px;
+  height: clamp(52px, 14vw, 64px);
   background-color: var(--screen-bg);
   border: var(--border-w) solid var(--border);
   border-radius: var(--radius);
   color: var(--screen-text);
-  font-size: 2.4rem;
+  font-size: clamp(1.4rem, 7vw, 2.4rem);
   font-weight: 800;
   text-align: right;
   padding: 0 12px;
-  margin-bottom: 14px;
+  margin-bottom: clamp(10px, 3vw, 14px);
   outline: none;
 }
 
 :root[data-theme="retro"] form input[name="textview"] {
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 4vw, 1rem);
 }
 :root[data-theme="futuristic"] form input[name="textview"] {
-  font-size: 1.35rem;
+  font-size: clamp(1rem, 5.5vw, 1.35rem);
   text-shadow: 0 0 8px rgba(92, 242, 255, 0.6);
 }
 :root[data-theme="minimalist"] form input[name="textview"] {
@@ -254,26 +264,30 @@ form input[name="textview"] {
 .buttons {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
+  gap: clamp(6px, 2vw, 10px);
 }
 
 button {
-  height: 46px;
+  height: clamp(46px, 12vw, 58px); /* bigger tap targets */
+  min-width: 0;
   border: var(--border-w) solid var(--border);
   border-radius: var(--radius);
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 4vw, 1.2rem);
   font-weight: 800;
   color: var(--text);
   background-color: var(--btn);
   box-shadow: var(--btn-glow);
   cursor: pointer;
+  touch-action: manipulation; /* removes the double-tap zoom delay */
+  user-select: none;
+  -webkit-user-select: none;
   transition:
     background-color 0.15s ease,
     opacity 0.15s ease;
 }
 
 :root[data-theme="retro"] button {
-  font-size: 0.78rem;
+  font-size: clamp(0.55rem, 2.8vw, 0.78rem);
 }
 :root[data-theme="minimalist"] button {
   font-weight: 600;
@@ -330,6 +344,7 @@ button:focus-visible {
   grid-column: span 2;
 }
 
+/* ---------- theme buttons ---------- */
 .theme-btn {
   display: flex;
   align-items: center;
@@ -369,9 +384,23 @@ button:focus-visible {
   background: linear-gradient(135deg, #ffffff 50%, #1c1c1c 50%);
 }
 
+/* ---------- footer credit ---------- */
+.calculator p {
+  margin-top: 14px;
+  text-align: center;
+  font-size: clamp(0.6rem, 2.8vw, 0.8rem);
+}
+
 .name {
   color: var(--name);
   font-weight: 800;
+}
+
+/* ---------- landscape phones: let the page scroll instead of clipping ---------- */
+@media (max-height: 520px) {
+  body {
+    align-items: flex-start;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
